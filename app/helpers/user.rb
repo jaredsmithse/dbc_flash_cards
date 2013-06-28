@@ -33,4 +33,17 @@ helpers do
     end
   end
 
+  def parse_file(file_name)
+  file = File.open(file_name,"r")
+    data = file.read
+    file.close
+    all_data = []
+
+    data = data.split("\n")
+    data.delete(" ")
+
+    all_data = Array.new((data.length/2)) {data.shift(2)}
+    return all_data
+  end
+
 end

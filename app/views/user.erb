@@ -1,0 +1,7 @@
+<h1>Welcome <%= @user.name %></h1>
+
+<h2>Here's a list of your decks</h2>
+<% @deck.each do |deck| %>
+<%= deck.name %>
+<% end %>
+

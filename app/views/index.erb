@@ -1,23 +1,24 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
+  <h1>Welcome Sexyshirts Flashcards</h1>
+  <p>Please sign up or create an account:</p>
 
-  <table>
-    <tr>
-      <th>File Description</th>
-      <th>File Location</th>
-    </tr>
-    <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-  </table>
+  <form id='sign-in' action='/sign_in' method='post'>
+    Sign in: <br>
+    email:
+    <input type='text' name='signin[email]'>
+    password:
+    <input type='password' name='signin[password_hash]'>
+    <input type'submit' value='sign in'>
+  </form>
+
+  <form id='sign-up' action='/sign_up' method='post'>
+    Create Account: <br>
+    email:
+    <input type='text' name='signup[email]'>
+    username:
+    <input type='text' name='signup[name]'>
+    password:
+    <input type='password' name='signup[password_hash]'>
+    <input type'submit' value='create account'>
+  </form>
 </div>

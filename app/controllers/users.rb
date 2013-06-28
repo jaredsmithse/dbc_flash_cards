@@ -1,7 +1,12 @@
 enable 'sesions'
 
 post '/sign_in' do
+  puts "beginning the sign in processs"
   authenticate_user(params[:signin])
+
+  puts "logged in: #{logged_in?}"
+
+  logged_in? ? (redirect '/user') : (redirect '/')
 end
 
 post '/sign_up' do
@@ -11,11 +16,12 @@ post '/sign_up' do
 
   session[:user_id] = new_user.id
 
-  redirect '/user/#{new_user.id}'
+  redirect '/user' 
 end 
 
-get '/user/:user_id' do 
+get '/user' do 
   current_user
+  @decks = @current_user.decks
   erb :user
 end
 

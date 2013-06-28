@@ -1,4 +1,4 @@
 get '/' do
-  redirect '/user/#{params[:user_id]}' if logged_in?
+  redirect '/user' if logged_in?
   erb :index
 end

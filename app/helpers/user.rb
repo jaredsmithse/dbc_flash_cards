@@ -7,6 +7,7 @@ helpers do
   end
 
   def logged_in?
+    p current_user
     !current_user.nil?
   end
 
@@ -22,15 +23,13 @@ helpers do
 
   def authenticate_user(info)
     user = User.find_by_email(info[:email])
-
     user_password = user.password_hash
-
     given_password = Digest::MD5.hexdigest(info[:password_hash] + user.salt)
+    
+
     if user_password == given_password 
       set_session_id(user.email)
-      redirect '/user/#{user.id}'
-    else 
-      redirect '/'
+      current_user
     end
   end
 

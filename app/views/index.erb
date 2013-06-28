@@ -1,24 +1,32 @@
 <div class="container">
-  <h1>Welcome Sexyshirts Flashcards</h1>
+  <h1>Welcome to Flashcards</h1>
   <p>Please sign up or create an account:</p>
 
   <form id='sign-in' action='/sign_in' method='post'>
-    Sign in: <br>
-    email:
+    <h3>Sign in:</h3> 
+    email:<br>
     <input type='text' name='signin[email]'>
-    password:
+    <br>
+    <br>
+    password:<br>
     <input type='password' name='signin[password_hash]'>
-    <input type'submit' value='sign in'>
+    <br>
+    <input type='submit' value='sign in'>
+    <br><br>
   </form>
 
   <form id='sign-up' action='/sign_up' method='post'>
-    Create Account: <br>
-    email:
+    <h3>Create Account:</h3> 
+    email:<br>
     <input type='text' name='signup[email]'>
-    username:
+    <br>
+    username:<br>
     <input type='text' name='signup[name]'>
-    password:
+    <br>
+    password:<br>
     <input type='password' name='signup[password_hash]'>
-    <input type'submit' value='create account'>
+    <br>
+    <input type='submit' value='create account'>
+    <br>
   </form>
 </div>

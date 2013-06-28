@@ -1,13 +1,17 @@
 require 'faker'
-require_relative('flashcard_samples.txt')
 
 10.times do 
   User.create({
-    name: Faker::Name,
+    name: Faker::Name.name,
     email: Faker::Internet.email,
     password_hash: "pass",
     salt: "1234"
     })
+end
+
+
+(1..10).each do |i|
+  Deck.create(name: "default", user_id: i )
 end
 
 def parse_file(file_name)
@@ -24,11 +28,12 @@ def parse_file(file_name)
 end
 
 def get_cards
-  parse_file('flashcard_samples.txt').each do |card|
-  Card.create(definition: card[0], word: card[1], deck: 1)
+  (1..10).each do |i|
+    parse_file('db/flashcard_samples.txt').each do |card|
+      Card.create(definition: card[0], word: card[1], deck_id: Deck.find(i).id)
+    end
+  end
 end
 
 get_cards
-Deck.create(name: "default", user: rand(1..10))
-
 

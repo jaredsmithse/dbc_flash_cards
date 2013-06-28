@@ -25,3 +25,8 @@ get '/user' do
   erb :user
 end
 
+post '/logout' do
+  session.clear
+  redirect '/'
+end 
+

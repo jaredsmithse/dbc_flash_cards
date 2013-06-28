@@ -5,4 +5,8 @@
   <% @deck.each do |deck| %>
   <a href="/deck/<%= deck.id %>"><li><%= deck.name %></li></a>
   <% end %>
+
+  <form id='logout' action='/logout' method='post'>
+    <input type='submit' value='log out'>
+  </form>
 </ul>

@@ -1,4 +1,4 @@
 get '/' do
-  # Look in app/views/index.erb
+  redirect '/user/#{params[:user_id]}' if logged_in?
   erb :index
 end

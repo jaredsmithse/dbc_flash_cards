@@ -3,7 +3,7 @@ class Cards < ActiveRecord::Migration
     create_table :cards do |t|
       t.string :definition
       t.string :word
-      t.reference :deck
+      t.references :deck
     end
   end
 end

@@ -3,10 +3,10 @@
 <h2>Here's a list of your decks</h2>
 <ul>
   <% @deck.each do |deck| %>
-  <a href="/deck/<%= deck.id %>"><li><%= deck.name %></li></a>
+  <a href="/deck/<%= deck.id %>"><li class="deck-item"><%= deck.name %></li></a>
   <% end %>
 
   <form id='logout' action='/logout' method='post'>
-    <input type='submit' value='log out'>
+    <button type='submit' >log out</button>
   </form>
 </ul>

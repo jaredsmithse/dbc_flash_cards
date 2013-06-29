@@ -1,7 +1,15 @@
-<h1><%= @deck.name %></h1>
+<div class="container">
+  <h1><%= @deck.name %></h1>
 
-<% @deck.each do |card| %>
-  <%= card.word %>
-<% end %>
+  <% @cards.each do |card| %>
+    <br>
+    <span>Question : </span>
+    <%= card.definition %>
+    <br><br>
+    <span>Answer: </span>
+    <%= card.word %>
+    <br>
+  <% end %>
+</div>
 
 

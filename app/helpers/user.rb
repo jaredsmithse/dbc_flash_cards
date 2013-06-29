@@ -34,7 +34,8 @@ helpers do
   end
 
   def parse_file(file_name)
-  file = File.open(file_name,"r")
+    p File.expand_path file_name
+    file = File.open(file_name,"r")
     data = file.read
     file.close
     all_data = []

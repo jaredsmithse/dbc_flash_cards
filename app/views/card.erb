@@ -1,15 +1,18 @@
 <div class="container">
   <h1><%= @deck.name %></h1>
-
-  <% @cards.each do |card| %>
-    <br>
-    <span>Question : </span>
-    <%= card.definition %>
+    <form class='next-card' action='/deck/1' method='get'>
+      <input type='submit' value='next card'>
+    </form>
     <br><br>
-    <span>Answer: </span>
-    <%= card.word %>
+    <span>Question : </span>
+    <%= @card.definition %>
+    <br><br>
+    <form class='submit-guess' action='/guess' method-'post'>
+      <input type='text' name='current_guess'>
+      <input type='submit' value='guess!'>
+    </form>
+    <span class='answer'>Answer: <%= @card.word %></span>
     <br>
-  <% end %>
 </div>
 
 

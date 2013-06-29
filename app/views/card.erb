@@ -1,18 +1,25 @@
 <div class="container">
   <h1><%= @deck.name %></h1>
-    <form class='next-card' action='/deck/1' method='get'>
-      <button type='submit' >next card</button>
-    </form>
-    <br><br>
-    <span>Question : </span>
-    <%= @card.definition %>
-    <br><br>
-    <form class='submit-guess' action='/guess' method-'post'>
-      <input type='text' name='current_guess'>
-      <button type='submit' >guess!</button>
-    </form>
-    <span class='answer'>Answer: <%= @card.word %></span>
-    <br>
+
+  <form class='next-card' action='/deck/' method='get'>
+    <input type='submit' value='next card'>
+  </form>
+  
+  <br><br>
+  
+  <span>Question : </span>
+  <%= @card.definition %>
+  <br><br>
+  
+  <form class='submit-guess' action='/guess' method='post'>
+    <input type='text' name='current_guess'>
+
+    <button type='submit' >guess!</button>
+    <input type="hidden" name="card_id" value=<%=@card.id%>>
+  </form>
+  
+  <div class='answer'>Answer: <%= @card.word %></div>
+  <br>
 </div>
 
 

@@ -1,16 +1,17 @@
 $(document).ready(function() {
-  
-  $('.submit-guess').on('submit', function(e){
+
+  $('form.submit-guess').on('submit', function(e){
       e.preventDefault();
-      // e.stopPropagation();
 
       $.ajax({
         url: '/guess',
         type: 'post',
         data: $(this).serialize()
       }).done(function(response){
-        if (response) { $('.answer').html('Correct!')}
-        else { $('.answer').attr('display', 'show')};
+        console.log(response);
+        if (response === 'true') { $('.answer').html('Correct!').css('display', 'block');}
+        else { $('.answer').css('display', 'block'); }
       });
   });
 });
+

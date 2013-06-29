@@ -40,13 +40,17 @@ a {
 }
 
 button {
-	background: #873632;
-	border: 2px solid #F2EFE3;
+	background: RGB(40,41,42);
+	border: 2px solid RGB(40,41,42);
 	color: gray;
 	width: 150px;
 	height: 30px;
 	border-radius: 5px;
+}
 
+button:hover {
+	border: 2px solid #E4E1D2;
+	color: #E4E1D2;
 }
 
 .answer {

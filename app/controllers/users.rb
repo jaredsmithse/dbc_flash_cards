@@ -11,23 +11,16 @@ end
 
 post '/sign_up' do
   user_info = parse_user_info(params[:signup])
-
   new_user = User.create(user_info)
-  Deck.create(name: "default", user_id: User.last.id )
-  
-  parse_file('../../db/flashcard_samples.txt').each do |card|
-      Card.create(definition: card[0], word: card[1], deck_id: Deck.last.id)
-  end
-
-
   session[:user_id] = new_user.id
-
   redirect '/user' 
 end 
 
 get '/user' do 
   current_user
   @decks = @current_user.decks
+  @deck = []
+  @deck << Deck.find(1)
   erb :user
 end
 

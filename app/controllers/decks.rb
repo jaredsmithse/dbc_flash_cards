@@ -7,5 +7,10 @@ get '/deck/:deck_id' do
 end
 
 post '/guess' do
-  params[:current_guess] == @card.word
+  @card = Card.find(params[:card_id])
+  params[:current_guess] == @card.word ? "true" : "false"
 end
+
+# get '/guess' do
+#   erb :card
+# end

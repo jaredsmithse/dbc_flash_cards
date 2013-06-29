@@ -1,7 +1,7 @@
 <div class="container">
   <h1><%= @deck.name %></h1>
     <form class='next-card' action='/deck/1' method='get'>
-      <input type='submit' value='next card'>
+      <button type='submit' >next card</button>
     </form>
     <br><br>
     <span>Question : </span>
@@ -9,7 +9,7 @@
     <br><br>
     <form class='submit-guess' action='/guess' method-'post'>
       <input type='text' name='current_guess'>
-      <input type='submit' value='guess!'>
+      <button type='submit' >guess!</button>
     </form>
     <span class='answer'>Answer: <%= @card.word %></span>
     <br>

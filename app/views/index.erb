@@ -4,29 +4,23 @@
 
   <form id='sign-in' action='/sign_in' method='post'>
     <h3>Sign in:</h3> 
-    email:<br>
-    <input type='text' name='signin[email]'>
-    <br>
-    <br>
-    password:<br>
-    <input type='password' name='signin[password_hash]'>
-    <br>
+
+    <input type='text' name='signin[email]' placeholder='email'><br>
+
+    <input type='password' name='signin[password_hash]' placeholder='password'><br>
+
     <button type='submit' >sign in</button>
-    <br><br>
   </form>
 
   <form id='sign-up' action='/sign_up' method='post'>
     <h3>Create Account:</h3> 
-    email:<br>
-    <input type='text' name='signup[email]'>
-    <br>
-    username:<br>
-    <input type='text' name='signup[name]'>
-    <br>
-    password:<br>
-    <input type='password' name='signup[password_hash]'>
-    <br>
+
+    <input type='text' name='signup[email]' placeholder='email'><br>
+
+    <input type='text' name='signup[name]' placeholder='username'><br>
+
+    <input type='password' name='signup[password_hash]' placeholder='password'><br>
+
     <button type='submit' >create account</button>
-    <br>
   </form>
 </div>
